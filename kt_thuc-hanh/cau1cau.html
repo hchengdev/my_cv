@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+let input = prompt("Nhập 20 số nguyên cách nhau bằng dấu phẩy:");
+
+let numbers = input.split(",").map(Number);
+
+let sumEven = 0;
+let sumOdd = 0;
+
+for (let i = 0; i < numbers.length; i++) {
+    if (!isNaN(numbers[i])) {
+        if (numbers[i] % 2 === 0) {
+            sumEven += numbers[i];
+        } else {
+            sumOdd += numbers[i];
+        }
+    }
+}
+
+document.write("Mảng các số đã nhập:<br>");
+document.write(numbers.join(', ') + "<br>");
+document.write("<br>");
+
+document.write(`${sumEven} - ${sumOdd} = ${sumEven - sumOdd}`)
+
+
+</script>
+</html>

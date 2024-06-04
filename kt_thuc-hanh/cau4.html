@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class DienThoai {
+    constructor(maDienThoai, ten, hangSanXuat, gia) {
+        this._maDienThoai = maDienThoai;
+        this._ten = ten;
+        this._hangSanXuat = hangSanXuat;
+        this._gia = gia;
+    }
+
+    get maDienThoai() {
+        return this._maDienThoai;
+    }
+
+    set maDienThoai(value) {
+        this._maDienThoai = value;
+    }
+
+    get ten() {
+        return this._ten;
+    }
+
+    set ten(value) {
+        this._ten = value;
+    }
+
+    get hangSanXuat() {
+        return this._hangSanXuat;
+    }
+
+    set hangSanXuat(value) {
+        this._hangSanXuat = value;
+    }
+
+    get gia() {
+        return this._gia;
+    }
+
+    set gia(value) {
+        this._gia = value;
+    }
+
+    toString() {
+        return `Mã điện thoại: ${this.maDienThoai}, Tên: ${this.ten}, Hãng sản xuất: ${this.hangSanXuat}, Giá: ${this.gia}`;
+    }
+}
+let danhSachDienThoai = [];
+
+function themDienThoai(maDienThoai, ten, hangSanXuat, gia) {
+    let dienThoaiMoi = new DienThoai(maDienThoai, ten, hangSanXuat, gia);
+    danhSachDienThoai.push(dienThoaiMoi);
+}
+function hienThiDanhSachDienThoai() {
+    danhSachDienThoai.sort((a, b) => a.ten.localeCompare(b.ten));
+
+    danhSachDienThoai.forEach(dienThoai => {
+        document.write(dienThoai.toString() + '<br>');
+    });
+}
+
+themDienThoai("DT001", "iPhone 12", "Apple", 999);
+themDienThoai("DT002", "Galaxy S21", "Samsung", 899);
+themDienThoai("DT003", "Mi 11", "Xiaomi", 799);
+
+hienThiDanhSachDienThoai();
+
+
+
+</script>
+</html>

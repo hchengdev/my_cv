@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function isPrime(num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function sortedPrimes(arr) {
+        let primeNumbers = arr.filter(isPrime); 
+        return primeNumbers.sort((a, b) => a - b); 
+    }
+
+    let numbers = [4, 6, 8, 9, 10, 11, 12, 13, 14, 15];
+
+    let sortedPrimesArray = sortedPrimes(numbers);
+    console.log("Mảng các số nguyên tố được sắp xếp:", sortedPrimesArray);
+
+
+</script>
+</html>
